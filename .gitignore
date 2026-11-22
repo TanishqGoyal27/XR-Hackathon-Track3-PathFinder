@@ -9,3 +9,6 @@ Track3_FAQ_Responses.txt
 Submission_Final_forGithub.pptx
 VIDEO_SCRIPT.md
 tools/make_slides.py
+out.txt
+*.exe
+~$*

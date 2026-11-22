@@ -4,7 +4,7 @@
 
 Members: Tanishq Goyal, Saanjal Jain, Ridhi, Chakshu Arora
 
-- Demo video: `VIDEO_LINK`
+- Demo video: [video/demo.mp4](video/demo.mp4)
 - Presentation: [presentation/](presentation/)
 - AI disclosure: [AI_DISCLOSURE.md](AI_DISCLOSURE.md)
 
@@ -95,6 +95,7 @@ day_dreamers.zip             same bundle, zipped
 tools/                       data fetch, degradation runs, scorer, tuner, profiler, plots
 results/                     figures + tables
 presentation/                slides (.pptx + .pdf)
+video/demo.mp4               demo video (2:59)
 AI_DISCLOSURE.md
 ```
 
