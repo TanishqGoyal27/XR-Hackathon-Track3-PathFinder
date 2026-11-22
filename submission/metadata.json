@@ -1,0 +1,20 @@
+{
+  "team_name": "day_dreamers",
+  "college": "Thapar Institute of Engineering and Technology",
+  "members": ["Tanishq Goyal", "Saanjal Jain", "Ridhi", "Chakshu Arora"],
+  "track": 3,
+  "entrypoint": "src/main.py",
+  "command": "python src/main.py <imu0/data.csv | dataset.zip | dataset_folder> estimated_trajectory.txt",
+  "language": "Python 3 (single thread, offline)",
+  "dependencies": ["numpy>=1.23"],
+  "sample_input": "TUM-VI room2 (512_16), imu0/data.csv degraded with the official degrade_imu.py (unmodified, seed 42)",
+  "sample_rows": 30747,
+  "sample_duration_s": 144.1,
+  "peak_heap_mb": 6.06,
+  "peak_heap_method": "tracemalloc around read + estimate + write (algorithm heap, as in the FAQ)",
+  "runtime_s": 0.55,
+  "runtime_ms_per_imu_second": 3.8,
+  "test_machine": "Intel Core (Family 6 Model 183), Windows 11, Python 3.14.4, NumPy 2.5.5",
+  "local_ate_rmse_m": 0.41,
+  "local_mean_ate_rmse_m_12_runs": 0.62
+}

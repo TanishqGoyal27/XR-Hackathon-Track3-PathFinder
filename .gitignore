@@ -1,0 +1,7 @@
+data_raw/
+data_test/
+__pycache__/
+*.pyc
+# organiser material (not ours to republish)
+XR_Hackathon_2026_Consolidated_Slides_V3-2.pptx
+Track3_FAQ_Responses.txt

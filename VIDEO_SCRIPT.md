@@ -1,0 +1,13 @@
+# Demo video script (2 min 45 s; hard limit 3 min)
+
+Record your screen (OBS, or Win+Alt+R with the Xbox Game Bar) with a voice-over. Upload it to YouTube as **Unlisted**, or to Google Drive with "anyone with the link can view". Then paste the link into README.md and slide 7.
+
+| Time | Show on screen | Say |
+|---|---|---|
+| 0:00–0:15 | Slide 1 | "Hi, we're team day_dreamers from Thapar Institute of Engineering and Technology. This is Path Finder, our Track 3 solution: a 6-DoF trajectory estimated from a degraded IMU, with no other sensors." |
+| 0:15–0:40 | Slide 2 | "The IMU gets jammed more and more over time: noise, drifting bias, spikes, missing rows, and finally 5 seconds with no data at all. Position is acceleration integrated twice, so even a tiny bias turns into hundreds of metres of error. Naive integration in our tests drifted 147 metres." |
+| 0:40–1:15 | Slide 4 (architecture) | "Our pipeline has six steps. We load with NumPy's C parser and auto-detect which columns are the accelerometer. That matters because the organisers' degradation script assumes accel comes first, while EuRoC puts gyro first. We clean spikes and stuck values, and integrate dropouts over their real time gap. Orientation comes from integrating the gyro. The key idea: the task is offline, so we can use zero-phase filters that look into the future. Bias and tilt errors only create slow drift, so a centred high-pass on velocity and position removes the drift without adding lag." |
+| 1:15–1:45 | Terminal: `python submission/src/main.py data_test/room2_A/mav0/imu0/data.csv out.txt`, then `python tools/evaluate.py data_raw/room2/groundtruth.txt out.txt data_test/room2_A/mav0/imu0/data.csv` | "Here's a live run on a degraded TUM-VI sequence: 30,000 rows in about half a second. The scorer confirms exactly one pose per input row, and an ATE of 0.41 metres after SE(3) alignment, the same alignment evo uses." |
+| 1:45–2:05 | `python tools/profile.py data_test/room2_A/mav0/imu0/data.csv` | "Budgets: 6 megabytes peak heap against an 8 megabyte limit, and under 4 milliseconds per second of IMU against a 20 millisecond limit." |
+| 2:05–2:30 | Slide 5, then slide 6 | "Across 12 degraded runs our mean error is 0.62 metres, against 147 for naive integration. In the blind 5 seconds we let the motion decay and the position relax to the mean, which was 2 to 5 times better than constant-velocity extrapolation. We also tried a Mahony filter and a batch bias calibration. Neither helped, so we removed them." |
+| 2:30–2:45 | Slide 8 | "One limitation: slow, large-scale motion can't be recovered from an IMU alone, so the path comes out smaller and centred. Everything is reproducible from the repository. Thank you!" |
