@@ -35,9 +35,7 @@ Per-sequence numbers are in [results/results.md](results/results.md).
 
 ## How it works
 
-```
-imu0/data.csv ─► 1 load ─► 2 clean ─► 3 attitude ─► 4 position ─► 5 blind 5 s ─► 6 write TUM
-```
+![pipeline](results/pipeline.png)
 
 1. **Load.** We use NumPy's C parser and store the input as float32, so no per-row Python objects are created.
    - The accel column group is the one whose median magnitude in the first 2 s is about *g* (9.81 m/s², or 1 if given in g). This handles both column orders.
