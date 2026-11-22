@@ -5,3 +5,7 @@ __pycache__/
 # organiser material (not ours to republish)
 XR_Hackathon_2026_Consolidated_Slides_V3-2.pptx
 Track3_FAQ_Responses.txt
+# local-only helpers
+Submission_Final_forGithub.pptx
+VIDEO_SCRIPT.md
+tools/make_slides.py
