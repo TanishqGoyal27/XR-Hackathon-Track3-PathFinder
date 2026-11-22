@@ -164,7 +164,7 @@ bullets(S[6], [
     "  python tools/tune.py · python tools/plot.py · python tools/profile.py <csv>",
     "Score with evo: evo_ape tum groundtruth.txt estimated_trajectory.txt -a",
     "Demo video: VIDEO_LINK",
-    "GitHub: REPO_LINK",
+    "GitHub: github.com/TanishqGoyal27/XR-Hackathon-Track3-PathFinder",
 ], size=12)
 
 # 8 brownie
